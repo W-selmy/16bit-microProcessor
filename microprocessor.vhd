@@ -10,7 +10,12 @@ entity microprocessor is
         
         -- External Memory Interface
         address_bus   : out   std_logic_vector(11 downto 0);
-        data_bus      : inout std_logic_vector(15 downto 0)
+        data_bus      : inout std_logic_vector(15 downto 0);
+        
+        -- Debug Outputs for Display
+        debug_pc      : out   std_logic_vector(11 downto 0);
+        debug_acc     : out   std_logic_vector(15 downto 0);
+        debug_muxB    : out   std_logic_vector(15 downto 0)
     );
 end microprocessor;
 
@@ -59,6 +64,11 @@ begin
             end if;
         end if;
     end process;
+
+    -- Assign debug outputs
+    debug_pc <= pc_out;
+    debug_acc <= acc_out;
+    debug_muxB <= muxB_out;
 
     -- Component Instantiations
     

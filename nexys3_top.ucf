@@ -1,0 +1,26 @@
+# Clock (100 MHz on Nexys 3)
+NET "clk"         LOC = V10 | IOSTANDARD = LVCMOS33;
+
+# Slide Switches
+NET "display_sel" LOC = T10 | IOSTANDARD = LVCMOS33; # SW0 (Right-most switch)
+
+# Push Buttons
+NET "reset"       LOC = B8  | IOSTANDARD = LVCMOS33; # BTNS (Center Button)
+NET "step_switch" LOC = A8  | IOSTANDARD = LVCMOS33; # BTNU (Up Button)
+
+# 7-Segment Display Segments (Cathodes)
+# seg(6) is CG, seg(0) is CA
+NET "seg[0]"      LOC = T17 | IOSTANDARD = LVCMOS33; # CA
+NET "seg[1]"      LOC = T18 | IOSTANDARD = LVCMOS33; # CB
+NET "seg[2]"      LOC = U17 | IOSTANDARD = LVCMOS33; # CC
+NET "seg[3]"      LOC = U18 | IOSTANDARD = LVCMOS33; # CD
+NET "seg[4]"      LOC = M14 | IOSTANDARD = LVCMOS33; # CE
+NET "seg[5]"      LOC = N14 | IOSTANDARD = LVCMOS33; # CF
+NET "seg[6]"      LOC = L14 | IOSTANDARD = LVCMOS33; # CG
+
+# 7-Segment Display Anodes
+# an(3) is the left-most digit, an(0) is the right-most digit
+NET "an[0]"       LOC = N16 | IOSTANDARD = LVCMOS33; # AN0 (Right digit)
+NET "an[1]"       LOC = N15 | IOSTANDARD = LVCMOS33; # AN1
+NET "an[2]"       LOC = P18 | IOSTANDARD = LVCMOS33; # AN2
+NET "an[3]"       LOC = P17 | IOSTANDARD = LVCMOS33; # AN3 (Left digit)
