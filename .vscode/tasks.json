@@ -1,0 +1,15 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "GHDL: Analyser et Simuler",
+      "type": "shell",
+      "command": "ghdl -a *.vhd; ghdl -e tb_microprocessor; ghdl -r tb_microprocessor --vcd=wave.vcd",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    }
+  ]
+}
